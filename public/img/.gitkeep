@@ -1,0 +1,2 @@
+# Pasta para armazenar imagens do projeto
+# Exemplo de uso no Blade: <img src="{{ asset('img/logo.png') }}" alt="Logo">

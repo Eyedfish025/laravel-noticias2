@@ -1,0 +1,18 @@
+{
+  "name": "Laravel 12 - PHP 8.4 (sem Node)",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/workspace/laravel-noticias",
+  "forwardPorts": [8000, 3306],
+  "extensions": [
+    "bmewburn.vscode-intelephense-client",
+    "ms-azuretools.vscode-docker",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "composer --version || true",
+  "remoteUser": "vscode"
+}
