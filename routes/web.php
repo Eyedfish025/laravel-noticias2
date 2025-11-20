@@ -2,10 +2,10 @@
 
 /**
  * Arquivo de Rotas Web (routes/web.php)
- * 
+ *
  * Este arquivo define todas as rotas HTTP da aplicação.
  * As rotas mapeiam URLs para Controllers/métodos específicos.
- * 
+ *
  * ESTRUTURA:
  * - Rotas Públicas: Acessíveis por qualquer visitante
  * - Rotas de Autenticação: Login e Logout
@@ -42,6 +42,8 @@ Route::get('/', [PublicoController::class, 'index'])->name('home');
 // Nome: 'noticia.show'
 Route::get('/noticia/{slug}', [PublicoController::class, 'show'])->name('noticia.show');
 
+// Rota para o Landing.blade
+Route::get('/home',[PublicoController::class, 'sounds']);
 /*
 |--------------------------------------------------------------------------
 | ROTAS DE AUTENTICAÇÃO
@@ -85,15 +87,15 @@ Route::middleware(['auth', 'eh.admin'])      // Middlewares de proteção
     ->prefix('admin')                        // Prefixo: /admin
     ->name('admin.')                         // Prefixo de nomes: admin.
     ->group(function() {
-        
+
         // Dashboard: Página inicial do painel administrativo
         // URL: http://localhost:8000/admin
         // Nome: admin.dashboard
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        
+
         /*
          * RESOURCE: Tipos de Notícia
-         * 
+         *
          * Route::resource() cria automaticamente 7 rotas CRUD:
          * - GET    /admin/tipos-noticia           -> index   (lista todos)
          * - GET    /admin/tipos-noticia/create    -> create  (form criar)
@@ -102,25 +104,25 @@ Route::middleware(['auth', 'eh.admin'])      // Middlewares de proteção
          * - GET    /admin/tipos-noticia/{id}/edit -> edit    (form editar)
          * - PUT    /admin/tipos-noticia/{id}      -> update  (atualizar)
          * - DELETE /admin/tipos-noticia/{id}      -> destroy (deletar)
-         * 
+         *
          * IMPORTANTE: ->parameters(['tipos-noticia' => 'tipos_noticia'])
          * Define que o parâmetro da rota será $tipos_noticia (singular)
          * Necessário porque Laravel singulariza errado nomes compostos.
          */
         Route::resource('tipos-noticia', TipoNoticiaController::class)
             ->parameters(['tipos-noticia' => 'tipos_noticia']);
-        
+
         /*
          * RESOURCE: Notícias
-         * 
+         *
          * Cria as 7 rotas CRUD padrão para gerenciar notícias.
          * URLs: /admin/noticias, /admin/noticias/create, etc.
          */
         Route::resource('noticias', NoticiaController::class);
-        
+
         /*
          * RESOURCE: Usuários
-         * 
+         *
          * Cria 6 rotas CRUD (exclui 'show' que não usamos).
          * ->except(['show']) = não cria a rota de visualização individual
          * URLs: /admin/usuarios, /admin/usuarios/create, etc.

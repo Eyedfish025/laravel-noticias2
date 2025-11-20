@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 /**
  * Controller PublicoController
- * 
+ *
  * Responsável pelas páginas públicas do portal de notícias.
  * Não requer autenticação - qualquer visitante pode acessar.
  */
@@ -15,10 +15,10 @@ class PublicoController extends Controller
 {
     /**
      * Exibe a página inicial com a listagem de notícias publicadas
-     * 
+     *
      * Busca apenas notícias que têm data de publicação (publicado_em não é null),
      * ordena pelas mais recentemente atualizadas e pagina de 10 em 10.
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function index()
@@ -34,10 +34,10 @@ class PublicoController extends Controller
 
     /**
      * Exibe os detalhes completos de uma notícia específica
-     * 
+     *
      * Busca a notícia pelo slug (URL amigável) e garante que está publicada.
      * Se não encontrar ou não estiver publicada, retorna erro 404.
-     * 
+     *
      * @param string $slug - Slug da notícia (ex: "minha-noticia")
      * @return \Illuminate\View\View
      */
@@ -51,4 +51,10 @@ class PublicoController extends Controller
         // Retorna a view de detalhes da notícia
         return view('publico.show', compact('noticia'));
     }
+
+    public function sounds ()
+    {
+        return view('landing');
+    }
+
 }
