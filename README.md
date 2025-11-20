@@ -99,45 +99,10 @@ O design é feito para **reduzir estímulos visuais**, **diminuir a ansiedade** 
 **Layout:**
 
 * Título: “Movimente-se com leveza”
-... (74 linhas)
-Recolher
-message.txt
-5 KB
-LANDING.BLADE.PHP
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundsGood - Sons para Tranquilidade</title>... (20 KB restante(s))
-Expandir
-message.txt
-70 KB
-WELCOME.BLADE.PHP
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-... (33 KB restante(s))
-Expandir
-message.txt
-83 KB
-STYLE.CSS
+
 /* ============================================
    RESET E CONFIGURAÇÕES GERAIS
    ============================================ */
-
-* {
-    margin: 0;
-Expandir
-message.txt
-14 KB
-Imagem
-Peixindozoi1 — 18:53
-https://prod.liveshare.vsengsaas.visualstudio.com/join?DAD0E94D427F4E2080CA900FCC10FBB97360
-Visual Studio Code for the Web
-Build with Visual Studio Code, anywhere, anytime, entirely in your browser.
 ﻿
 ## 🧭 **Visão Geral**
 
